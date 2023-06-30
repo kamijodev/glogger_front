@@ -1,23 +1,28 @@
+'use client'
+
+import { useRouter } from "next/navigation";
+import Input from "../components/Input";
 
 export default function Login() {
+  const router = useRouter();
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    // 処理
+    router.push('/menu');
+  };
+
   return (
-    <main className="h-screen bg-purple-950">
-      <div className="p-10 pt-28 h-2/5">
-        <h1 className="text-5xl text-center font-bold text-white italic">GLogger</h1>
+    <main className="h-screen bg-indigo-600">
+      <div className="h-2/6 flex justify-center">
+        <h1 className="my-auto text-5xl text-center font-bold text-white italic"><span className="text-6xl">G</span>Logger</h1>
       </div>
-      <div className="bg-white shadow rounded-t-3xl p-5 h-3/5">
-        <h1 className="text-2xl font-bold text-purple-950">Login</h1>
-        <div className="relative z-0 w-full mb-6 group mt-8">
-          <input type="text" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-          <label className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">User ID</label>
-        </div>
-        <div className="relative z-0 w-full mb-6 group mt-8">
-          <input type="text" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-          <label className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
-        </div>
-        <button className="block rounded-lg w-2/3 mx-auto bg-purple-950 text-white mt-8 p-2">Login</button>
-        <div className="pt-8 text-center text-purple-700">register new account</div>
-      </div>
+      <form onSubmit={handleLogin} className="bg-white shadow rounded-t-3xl p-5 h-4/6">
+        <h1 className="text-2xl font-bold text-indigo-700">Login</h1>
+        <Input type="text" label="User Id"></Input>
+        <Input type="password" label="Password"></Input>
+        <button type="submit" className="block rounded-lg w-2/3 mx-auto bg-indigo-700 text-white mt-8 p-2">Login</button>
+        <div className="pt-8 text-center text-indigo-500">register new account</div>
+      </form>
     </main>
   );
 }

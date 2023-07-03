@@ -1,15 +1,15 @@
 'use client'
 
-import { useRouter } from "next/navigation";
-import Input from "../components/Input";
+import { useRouter } from "next/navigation"
+import Input from "../components/Input"
 
 export default function Login() {
-  const router = useRouter();
+  const router = useRouter()
   const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
     // 処理
-    router.push('/menu');
-  };
+    router.push('/menu')
+  }
 
   return (
     <main className="h-screen bg-indigo-600">
@@ -24,5 +24,5 @@ export default function Login() {
         <div className="pt-8 text-center text-indigo-500">register new account</div>
       </form>
     </main>
-  );
+  )
 }

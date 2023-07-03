@@ -19,5 +19,5 @@ export default function GameLogs() {
         <div className="pt-8 text-center text-purple-700">register new account</div>
       </div>
     </main>
-  );
+  )
 }

@@ -1,7 +1,7 @@
 <div align="center">
 <samp>
 
-  ## GLogger![ss]()
+  ## GLogger
 
   game logger.  
     

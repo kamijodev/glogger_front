@@ -1,11 +1,10 @@
 'use client'
 
 import { useState } from "react"
-
-// import Item from "../components/Item";
+import { useRouter } from 'next/navigation'
 
 export default function CreateGame() {
-
+  const router = useRouter()
   const now = new Date()
   const [title, setTitle] = useState('')
   const [tags, setTags] = useState('')
@@ -33,6 +32,8 @@ export default function CreateGame() {
       })
     })
     if (result.status === 200)  {
+      const { id } = await result.json()
+      router.push(`/game-detail/${id}`)
     }
   }
 
